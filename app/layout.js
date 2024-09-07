@@ -1,3 +1,4 @@
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,11 +19,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const theme = createTheme();
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      {/* <ThemeProvider theme={theme}> */}
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </body>
+      {/* </ThemeProvider> */}
     </html>
   );
 }
